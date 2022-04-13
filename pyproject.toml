@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "repl_python3_FinanceApps"
+version = "0.1.0"
+description = ""
+authors = ["mrmsquared <<>>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "^1.4.2"
+python-dateutil = "^2.8.2"
+pytz = "^2022.1"
+numpy = "^1.22.3"
+six = "^1.16.0"
+colorama = "^0.4.4"
+argparse = "^1.4.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
