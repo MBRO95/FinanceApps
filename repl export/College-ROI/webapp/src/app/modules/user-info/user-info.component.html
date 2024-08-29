@@ -1,0 +1,72 @@
+<mat-card style="background-color: rgba(136, 160, 150, .2)">
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="basicsFormGroup">
+        <form [formGroup]="basicsFormGroup" (ngSubmit)="saveBasics()">
+            <ng-template matStepLabel>The Basics</ng-template>
+            <mat-form-field>
+                <input matInput placeholder="Name" formControlName="nameCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>College search progress</mat-label>
+                <mat-select formControlName="intentCtrl" required>
+                    <mat-option *ngFor="let intent of intents" [value]="intent.value">{{intent.viewValue}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Age" formControlName="ageCtrl" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input type="text" placeholder="State" matInput formControlName="stateCtrl" [matAutocomplete]="autoState" required>
+            </mat-form-field>
+            <mat-autocomplete autoActiveFirstOption #autoState="matAutocomplete">
+                <mat-option *ngFor="let state of filteredStates | async" [value]="state">{{state}}</mat-option>
+            </mat-autocomplete>
+            <div>
+                <button mat-raised-button matStepperNext type="submit" [disabled]="!basicsFormGroup.valid">Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="financeFormGroup">
+        <form [formGroup]="financeFormGroup" (ngSubmit)="savePrinciple()">
+            <ng-template matStepLabel>Finances</ng-template>
+                <mat-form-field>
+                    <input matInput placeholder="Total scholarship amount per year" formControlName="scholarshipCtrl">
+                </mat-form-field>
+            <div>
+                <button mat-raised-button matStepperPrevious>Back</button>
+                <button mat-raised-button matStepperNext type="submit">Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form [formGroup]="collegeFormGroup" (ngSubmit)="onSubmit()">
+            <ng-template matStepLabel>College & Degree</ng-template>
+            <div *ngIf="collegeFormGroup.get('collegeCtrl')">
+                <p>Choose your desired college*</p>
+                <mat-form-field>
+                    <input type="text" matInput formControlName="collegeCtrl" [matAutocomplete]="autoCol">
+                </mat-form-field>
+                <mat-autocomplete autoActiveFirstOption #autoCol="matAutocomplete">
+                    <mat-option *ngFor="let college of filteredColleges | async" [value]="college">{{college}}</mat-option>
+                </mat-autocomplete>
+            </div>
+            <div *ngIf="collegeFormGroup.get('degreeCtrl')">
+                <p>Choose your desired degree*</p>
+                <mat-form-field>
+                    <input type="text" matInput formControlName="degreeCtrl" [matAutocomplete]="auto">
+                </mat-form-field>
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-option *ngFor="let degree of filteredDegrees | async" [value]="degree">{{degree}}</mat-option>
+                </mat-autocomplete>
+            </div>
+            <div>
+                <button mat-raised-button matStepperPrevious>Back</button>
+                <button mat-raised-button (click)="stepper.reset()">Reset</button>
+                <button mat-raised-button matStepperNext type="submit" [disabled]="!collegeFormGroup.valid">Next</button>
+            </div>
+        </form>
+    </mat-step>
+</mat-horizontal-stepper>
+</mat-card>

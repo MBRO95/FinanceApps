@@ -1,0 +1,44 @@
+<br>
+<div class="left" style="padding-right:1em">
+    <mat-card style="background-color: rgba(136, 160, 150, .2)">                
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title *ngIf="userDegree && userCollege">ROI of {{userDegree}} at {{userCollege}}</mat-card-title>
+                <mat-card-title *ngIf="userDegree && !userCollege">ROI of {{userDegree}} Degree</mat-card-title>
+                <mat-card-title *ngIf="!userDegree && userCollege">ROI of a degree at {{userCollege}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <exemplar-line-chart (repaymentAgeEvent)="updateRepaymentAge($event)" id="line-chart" [age]="age" [lineChartData]="lineChartData" [debtRepaymentPercent]="value"></exemplar-line-chart>
+            </mat-card-content>
+        </mat-card>  
+    </mat-card>
+</div>
+<div class="right">
+    <mat-card style="background-color: rgba(136, 160, 150, .2)"> 
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Hey {{userName}}!</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Based on the information you provided, your degree will cost <b>{{totalCost | currency}}</b></p> 
+                <p>We're predicting that you'll make a starting salary of <b>{{startingSalary | currency}}</b> </p>
+                <p *ngIf="!midSalary">Even better, halfway through your career we estimate that you'll be making around <b>{{midSalary | currency}}</b><p>
+                <p>We've found that your degree will pay you back <b>{{roi}}X</b> with total lifetime earnings of <b>{{lifetimeEarnings | currency}}</b>
+            </mat-card-content>
+        </mat-card> 
+        <br>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Change Repayment Percentage</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Percentage of salary towards paying off debt: <br>
+                    <mat-slider thumbLabel [tickInterval]="tickInterval" [min]="min" [max]="max" [step]="step" [(value)]="value"
+                        [vertical]="vertical" (slideend)="updateRepaymentPercent(value)">
+                    </mat-slider>
+                </p> 
+                <p>Allocating <b>{{value}}%</b> of your salary to college debt means you will be done paying at age <b>{{debtRepaymentAge}}</b></p>
+            </mat-card-content>
+        </mat-card> 
+    </mat-card>
+</div>

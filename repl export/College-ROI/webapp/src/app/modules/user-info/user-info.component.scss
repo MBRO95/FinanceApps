@@ -1,0 +1,85 @@
+@import '_app-colors';
+
+.mat-form-field{
+    display: block;
+}
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: $purple;
+}
+::ng-deep .mat-stepper-horizontal{
+    border-radius: 4px;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+
+::ng-deep .mat-horizontal-content-container {
+    overflow: hidden;
+    padding: 0 24px 24px 24px;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit{
+    background-color: $purple
+}
+
+::ng-deep .mat-step-header .mat-step-icon-state-edit {
+    background-color: $purple
+}
+
+::ng-deep .mat-step-header .mat-step-label.mat-step-label-active {
+    color: rgba(0,0,0,.87);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+::ng-deep .mat-form-field-wrapper{
+    border-color: $teal;
+    border-width: 5px;
+}
+
+::ng-deep .mat-form-field {
+
+    .mat-input-element {
+        color: black;
+    }
+    .mat-form-field-label {
+        color: gray;   
+    }
+    .mat-form-field-underline {
+        background-color: $purple
+    }
+    .mat-form-field-ripple {
+        background-color: black;
+    }
+    .mat-form-field-required-marker {
+        color: $coral
+    }
+}
+
+::ng-deep .mat-form-field.mat-focused {
+    .mat-form-field-label {
+        color: $coral;
+    }
+    .mat-form-field-ripple {
+        background-color: $coral;
+    }
+    .mat-form-field-required-marker {
+        color: $coral;
+    }
+    .mat-input-element {
+        color: black;
+    }
+}
+
+::ng-deep .mat-form-field.mat-form-field-invalid {
+    .mat-input-element {
+        color: $coral;
+    }
+    .mat-form-field-label {
+        color: $coral;
+        .mat-form-field-required-marker {
+            color: $coral;
+        }
+    }
+    .mat-form-field-ripple {
+        background-color: $coral;
+    }
+}

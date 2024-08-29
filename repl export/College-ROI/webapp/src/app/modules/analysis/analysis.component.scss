@@ -1,0 +1,35 @@
+@import '_app-colors.scss';
+
+.container .column {
+    float: right;
+  }
+  
+.left {
+  float: left;
+  width: 75%;
+}
+
+.right {
+  float: right;
+  width: 25%;
+}
+
+p{
+  font-size: 13px
+}
+
+::ng-deep .mat-accent .mat-slider-track-fill{
+  background-color: $coral
+}
+
+::ng-deep .mat-accent .mat-slider-thumb{
+  background-color: $coral
+}
+
+::ng-deep .mat-accent .mat-slider-thumb-label{
+  background-color: $coral
+}
+
+::ng-deep .mat-slider-focus-ring {
+  background-color: $coral
+}

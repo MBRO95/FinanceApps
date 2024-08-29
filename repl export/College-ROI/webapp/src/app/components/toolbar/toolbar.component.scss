@@ -1,0 +1,18 @@
+@import '_app-colors';
+
+.exemplar-app-bar {
+  position: relative;
+  display: block;
+}
+
+.vanguard-logo {
+  height: 24px;
+  width: 120px;
+  display: inline-block;
+  background: url('/assets/svg/logo_vanguard.svg') no-repeat center left;
+  background-size: contain;
+  position: relative;
+  top: 0.4rem;
+  margin-right: 12px;
+  border-right: 1px solid white;
+}

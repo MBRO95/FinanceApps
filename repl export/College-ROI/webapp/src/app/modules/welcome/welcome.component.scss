@@ -1,0 +1,52 @@
+@import '_app-colors.scss';
+
+.banner {
+    background-image: url(https://cdn-static.findly.com/wp-content/uploads/sites/618/2018/08/EventsPage_GHC_Banner_1600x800_A1.jpg);
+    background-repeat: no-repeat;    
+}
+
+.container{
+    position: relative;
+    width: 100%;
+}
+
+.container img{
+    width: 100%;
+    height: auto;
+}
+
+.container .inner {
+    width: 50%;
+    height: auto;
+}
+
+.container .inner .btn {
+    position: absolute;
+    top: 50%;
+    left: 57%;
+    padding: 10px 20px;
+    text-align: center;
+    font-size:15px;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+  
+  .container .inner .btn:hover {
+    background-color: $teal
+  }
+
+  .container .inner .overlay{
+    position: absolute;
+    padding: 20px;
+    top: 20%;
+    left: 50%;
+    color: $vg-red
+  }
+
+  .container .inner .subtitle{
+      position: absolute;
+      padding: 10px;
+      top: 30%;
+      left: 51%;
+      color: $purple;
+  }

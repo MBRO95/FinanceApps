@@ -1,0 +1,8 @@
+// Set Material theme variables
+@import '_app-colors.scss';
+$mdc-theme-primary: $purple; // primary color
+$mdc-theme-secondary: $vg-putty; // secondary color
+
+// Add icons and stylesheet for Material Components for the Web
+@import '~material-icons/iconfont/material-icons.css';
+@import '~@angular-mdc/theme/material';

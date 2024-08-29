@@ -1,0 +1,15 @@
+@import '_app-colors.scss';
+
+.star {
+  font-size: 1.5rem;
+  color: $ivory;
+}
+.filled {
+  color: $coral;
+}
+.bad {
+  color: $ivory;
+}
+.filled.bad {
+  color: $coral;
+}
